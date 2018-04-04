@@ -405,6 +405,7 @@ function parseEdges(parent) {
 
         var sourceId = getAttr(edgeDom, 'source');
         var targetId = getAttr(edgeDom, 'target');
+        var symbol = getAttr(edgeDom, 'symbol');
 
         var edge = {
             id: id,
@@ -413,7 +414,8 @@ function parseEdges(parent) {
             target: targetId,
             lineStyle: {
                 normal: {}
-            }
+            },
+            symbol: symbol
         };
 
         var lineStyle = edge.lineStyle.normal;

@@ -123,6 +123,7 @@ function parseEdges(parent) {
     var label = getAttr(edgeDom, 'label');
     var sourceId = getAttr(edgeDom, 'source');
     var targetId = getAttr(edgeDom, 'target');
+    var symbol = getAttr(edgeDom, 'symbol');
     var edge = {
       id: id,
       name: label,
@@ -130,7 +131,8 @@ function parseEdges(parent) {
       target: targetId,
       lineStyle: {
         normal: {}
-      }
+      },
+      symbol: symbol
     };
     var lineStyle = edge.lineStyle.normal;
     var vizThicknessDom = getChildByTagName(edgeDom, 'viz:thickness');
