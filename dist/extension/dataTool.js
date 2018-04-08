@@ -414,8 +414,7 @@ function parseEdges(parent) {
             target: targetId,
             lineStyle: {
                 normal: {}
-            },
-            symbol: symbol
+            }
         };
 
         var lineStyle = edge.lineStyle.normal;
@@ -437,6 +436,9 @@ function parseEdges(parent) {
         // if (vizShapeDom) {
         //     edge.shape = vizShapeDom.getAttribute('shape');
         // }
+        if (symbol) {
+          edge.symbol = symbol.split(",").map(function(e) { return e.trim(); });
+        }
 
         return edge;
     }) : [];

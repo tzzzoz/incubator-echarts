@@ -131,8 +131,7 @@ function parseEdges(parent) {
       target: targetId,
       lineStyle: {
         normal: {}
-      },
-      symbol: symbol
+      }
     };
     var lineStyle = edge.lineStyle.normal;
     var vizThicknessDom = getChildByTagName(edgeDom, 'viz:thickness');
@@ -148,6 +147,12 @@ function parseEdges(parent) {
     //     edge.shape = vizShapeDom.getAttribute('shape');
     // }
 
+
+    if (symbol) {
+      edge.symbol = symbol.split(",").map(function (e) {
+        return e.trim();
+      });
+    }
 
     return edge;
   }) : [];
